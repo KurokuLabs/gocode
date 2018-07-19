@@ -39,7 +39,7 @@ func (c *Config) Suggest(filename string, data []byte, cursor int) ([]Candidate,
 		localpkg:   pkg,
 		partial:    partial,
 		filter:     objectFilters[partial],
-		builtin:    c.Builtin,
+		builtin:    ctx != selectContext && c.Builtin,
 		ignoreCase: c.IgnoreCase,
 	}
 
